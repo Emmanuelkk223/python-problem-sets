@@ -5,17 +5,12 @@ def main():
     else:
         print("Invalid")
 
-
 def is_valid(s):
-    punctuation = set("!@#$%^&*()_+}}?><':|./,")
+    punctuation = set("!@#$%^&*()_+{}?><':|./,")
     space = set(" ")
     for char in s:
-        if s[2:].isalpha() and max(6, min(2, len(s))) and s[:2].isalnum():
+        if s[2:].isalpha() and max(6, min(2, len(s))) and s[:2].isdigit():
             return True
         elif char in punctuation or char in space:
             return False
-        
-    
-
-
 main()
