@@ -20,10 +20,15 @@ fruit_list = [
     {'fruit': 'Tangerine', 'calories': 50},
     {'fruit': 'Watermelon', 'calories': 80}
 ]
-fruit = input('Item: ')
-fruit = fruit.capitalize()
+
+fruit = input('Item: ').capitalize()
+found = False
+
 for nutrition in fruit_list:
     if fruit == nutrition['fruit']:
-        print('Calories: ', nutrition['calories'])
-    else:
+        print('Calories:', nutrition['calories'])
+        found = True
         break
+
+if not found:
+    print(f"{fruit} is not in the list.")
